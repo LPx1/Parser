@@ -1,6 +1,14 @@
+/* CS
+ * @Luis Pamintuan
+ * @Ivan Hernandez 
+ * 
+ * 	16 October 2018
+ */
 package edu.sjsu.fwjs;
 
 import java.util.List;
+
+
 
 /**
  * Values in FWJS.
@@ -90,8 +98,12 @@ class ClosureVal implements Value {
      * of the environment where the function was created. Each parameter should
      * be bound to its matching argument and added to the new local environment.
      */
-    public Value apply(List<Value> argVals) {
-        // YOUR CODE HERE
-        return null;
+public Value apply(List<Value> argVals) {
+        Environment env = new Environment(this.outerEnv);
+        for(int i = 0; i < params.size(); i++) {
+            env.createVar(params.get(i), argVals.get(i));
+        }
+
+        return this.body.evaluate(env);
     }
 }
