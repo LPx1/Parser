@@ -6,18 +6,36 @@ grammar FeatherweightJavaScript;
 // Reserved words
 IF        : 'if' ;
 ELSE      : 'else' ;
+WHILE     : 'while' ;
+FUNCTION  : 'function' ;
+VAR       : 'var' ;
+PRINT     : 'print' ;
 
 // Literals
 INT       : [1-9][0-9]* | '0' ;
+BOOL      : 'true' | 'false' ;
+NULL      : 'null' ;
 
 // Symbols
 MUL       : '*' ;
 DIV       : '/' ;
+ADD       : '+' ;
+SUB       : '-' ;
+MOD       : '%' ;
+GT        : '>' ;
+LT        : '<' ;
+GE        : '>=' ;
+LE        : '<=' ;
+EQ        : '==' ;
 SEPARATOR : ';' ;
+
+// Identifier
+IDENTIFIER : [a-zA-Z_][a-zA-Z_0-9]*;
 
 
 // Whitespace and comments
 NEWLINE   : '\r'? '\n' -> skip ;
+BLOCK_COMMENT : '/*' .*? '*/'  -> skip ;
 LINE_COMMENT  : '//' ~[\n\r]* -> skip ;
 WS            : [ \t]+ -> skip ; // ignore whitespace
 
