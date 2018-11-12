@@ -48,11 +48,22 @@ prog: stat+ ;
 stat: expr SEPARATOR                                    # bareExpr
     | IF '(' expr ')' block ELSE block                  # ifThenElse
     | IF '(' expr ')' block                             # ifThen
+    | WHILE '(' expr ')' block                          # while
+    | PRINT '(' expr ')' SEPARATOR                      # print
     ;
 
 expr: expr op=( '*' | '/' | '%' ) expr                  # MulDivMod
     | INT                                               # int
     | '(' expr ')'                                      # parens
+    | expr op=( '+' | '-' ) expr                        # addsub
+    | expr op=( '>' | '<' | '<=' | '>=' | '==') expr    # compare
+    | FUNCTION '(' (expr)? (',' expr)* ')' block        # funcDec
+    | IDENTIFIER '(' (expr)? (',' expr)* ')'            # funcApp
+    | VAR IDENTIFIER ASGN expr                          # varDec
+    | IDENTIFIER                                        # varApp
+    | IDENTIFIER ASGN expr                              # varAsgn
+    | BOOL                                              # bool
+    | NULL                                              # null
     ;
 
 block: '{' stat* '}'                                    # fullBlock
