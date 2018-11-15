@@ -50,6 +50,7 @@ stat: expr SEPARATOR                                    # bareExpr
     | IF '(' expr ')' block                             # ifThen
     | WHILE '(' expr ')' block                          # while
     | PRINT '(' expr ')' SEPARATOR                      # print
+    | SEPARATOR                                         # blank
     ;
 
 expr: expr op=( '*' | '/' | '%' ) expr                  # MulDivMod
