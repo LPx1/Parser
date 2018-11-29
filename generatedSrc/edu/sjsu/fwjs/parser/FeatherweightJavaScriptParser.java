@@ -19,8 +19,8 @@ public class FeatherweightJavaScriptParser extends Parser {
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, IF=6, ELSE=7, WHILE=8, FUNCTION=9, 
 		VAR=10, PRINT=11, INT=12, BOOL=13, NULL=14, MUL=15, DIV=16, ADD=17, SUB=18, 
-		MOD=19, GT=20, LT=21, GE=22, LE=23, EQ=24, SEPARATOR=25, IDENTIFIER=26, 
-		NEWLINE=27, BLOCK_COMMENT=28, LINE_COMMENT=29, WS=30, ASGN=31;
+		MOD=19, GT=20, LT=21, GE=22, LE=23, EQ=24, SEPARATOR=25, ASGN=26, IDENTIFIER=27, 
+		NEWLINE=28, BLOCK_COMMENT=29, LINE_COMMENT=30, WS=31;
 	public static final int
 		RULE_prog = 0, RULE_stat = 1, RULE_expr = 2, RULE_block = 3;
 	public static final String[] ruleNames = {
@@ -30,13 +30,13 @@ public class FeatherweightJavaScriptParser extends Parser {
 	private static final String[] _LITERAL_NAMES = {
 		null, "'('", "')'", "','", "'{'", "'}'", "'if'", "'else'", "'while'", 
 		"'function'", "'var'", "'print'", null, null, "'null'", "'*'", "'/'", 
-		"'+'", "'-'", "'%'", "'>'", "'<'", "'>='", "'<='", "'=='", "';'"
+		"'+'", "'-'", "'%'", "'>'", "'<'", "'>='", "'<='", "'=='", "';'", "'='"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
 		null, null, null, null, null, null, "IF", "ELSE", "WHILE", "FUNCTION", 
 		"VAR", "PRINT", "INT", "BOOL", "NULL", "MUL", "DIV", "ADD", "SUB", "MOD", 
-		"GT", "LT", "GE", "LE", "EQ", "SEPARATOR", "IDENTIFIER", "NEWLINE", "BLOCK_COMMENT", 
-		"LINE_COMMENT", "WS", "ASGN"
+		"GT", "LT", "GE", "LE", "EQ", "SEPARATOR", "ASGN", "IDENTIFIER", "NEWLINE", 
+		"BLOCK_COMMENT", "LINE_COMMENT", "WS"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -919,17 +919,17 @@ public class FeatherweightJavaScriptParser extends Parser {
 		"\1\2\60[\7\16\2\2\61\62\7\3\2\2\62\63\5\6\4\2\63\64\7\4\2\2\64[\3\2\2"+
 		"\2\65\66\7\13\2\2\668\7\3\2\2\679\5\6\4\28\67\3\2\2\289\3\2\2\29>\3\2"+
 		"\2\2:;\7\5\2\2;=\5\6\4\2<:\3\2\2\2=@\3\2\2\2><\3\2\2\2>?\3\2\2\2?A\3\2"+
-		"\2\2@>\3\2\2\2AB\7\4\2\2B[\5\b\5\2CD\7\34\2\2DF\7\3\2\2EG\5\6\4\2FE\3"+
+		"\2\2@>\3\2\2\2AB\7\4\2\2B[\5\b\5\2CD\7\35\2\2DF\7\3\2\2EG\5\6\4\2FE\3"+
 		"\2\2\2FG\3\2\2\2GL\3\2\2\2HI\7\5\2\2IK\5\6\4\2JH\3\2\2\2KN\3\2\2\2LJ\3"+
-		"\2\2\2LM\3\2\2\2MO\3\2\2\2NL\3\2\2\2O[\7\4\2\2PQ\7\f\2\2QR\7\34\2\2RS"+
-		"\7!\2\2S[\5\6\4\7T[\7\34\2\2UV\7\34\2\2VW\7!\2\2W[\5\6\4\5X[\7\17\2\2"+
-		"Y[\7\20\2\2Z/\3\2\2\2Z\61\3\2\2\2Z\65\3\2\2\2ZC\3\2\2\2ZP\3\2\2\2ZT\3"+
-		"\2\2\2ZU\3\2\2\2ZX\3\2\2\2ZY\3\2\2\2[g\3\2\2\2\\]\f\16\2\2]^\t\2\2\2^"+
-		"f\5\6\4\17_`\f\13\2\2`a\t\3\2\2af\5\6\4\fbc\f\n\2\2cd\t\4\2\2df\5\6\4"+
-		"\13e\\\3\2\2\2e_\3\2\2\2eb\3\2\2\2fi\3\2\2\2ge\3\2\2\2gh\3\2\2\2h\7\3"+
-		"\2\2\2ig\3\2\2\2jn\7\6\2\2km\5\4\3\2lk\3\2\2\2mp\3\2\2\2nl\3\2\2\2no\3"+
-		"\2\2\2oq\3\2\2\2pn\3\2\2\2qt\7\7\2\2rt\5\4\3\2sj\3\2\2\2sr\3\2\2\2t\t"+
-		"\3\2\2\2\r\r-8>FLZegns";
+		"\2\2\2LM\3\2\2\2MO\3\2\2\2NL\3\2\2\2O[\7\4\2\2PQ\7\f\2\2QR\7\35\2\2RS"+
+		"\7\34\2\2S[\5\6\4\7T[\7\35\2\2UV\7\35\2\2VW\7\34\2\2W[\5\6\4\5X[\7\17"+
+		"\2\2Y[\7\20\2\2Z/\3\2\2\2Z\61\3\2\2\2Z\65\3\2\2\2ZC\3\2\2\2ZP\3\2\2\2"+
+		"ZT\3\2\2\2ZU\3\2\2\2ZX\3\2\2\2ZY\3\2\2\2[g\3\2\2\2\\]\f\16\2\2]^\t\2\2"+
+		"\2^f\5\6\4\17_`\f\13\2\2`a\t\3\2\2af\5\6\4\fbc\f\n\2\2cd\t\4\2\2df\5\6"+
+		"\4\13e\\\3\2\2\2e_\3\2\2\2eb\3\2\2\2fi\3\2\2\2ge\3\2\2\2gh\3\2\2\2h\7"+
+		"\3\2\2\2ig\3\2\2\2jn\7\6\2\2km\5\4\3\2lk\3\2\2\2mp\3\2\2\2nl\3\2\2\2n"+
+		"o\3\2\2\2oq\3\2\2\2pn\3\2\2\2qt\7\7\2\2rt\5\4\3\2sj\3\2\2\2sr\3\2\2\2"+
+		"t\t\3\2\2\2\r\r-8>FLZegns";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
